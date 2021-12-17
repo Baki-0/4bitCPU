@@ -6,6 +6,6 @@ module FA(
     output C    //carry
 );
     assign S = (A^B)^Cin;
-    assign C = (A&C)|(C&(A^B));
+    assign C = (A&Cin)|(Cin&(A^B));
 
 endmodule

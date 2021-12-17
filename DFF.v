@@ -1,10 +1,10 @@
 module DFF(
-    clk, D, Q
+    D, clk, Q
 );
 
-input clk, D;
+input D, clk;
 output Q;
-reg Q;
+reg Q=0;
 
 always@(posedge clk)begin
     Q <= D; 

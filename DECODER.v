@@ -14,12 +14,12 @@ module DECODER(
     assign Im = A[3:0];
     assign S0[0] = ( A[5] | (~A[6]) | (~A[7]) ) & A[4];
     assign S0[1] = A[5];
-    assign S1[0] = ( (~A[5])&A[7] ) | ( (~A[4])&A[6] ) | ( (~A[4])&A[5] ) | ( A[4] | (~A[5]) | (~A[6]) );
+    assign S1[0] = ( (~A[5])&A[7] ) | ( (~A[4])&A[6] ) | ( (~A[4])&A[5] ) | ( A[4] & (~A[5]) & (~A[6]) );
     assign S1[1] = A[5] | (~A[6]) | (~A[7]);
     assign L0 = ( (~A[6])&(~A[7]) ) | ( (~A[4])&A[6]&A[7] );
-    assign L1 = ( (~A[7])&A[6] ) | ( A[4] | (~A[5]) | A[6] );
+    assign L1 = ( (~A[7])&A[6] ) | ( A[4] & (~A[5]) & A[6] );
     assign L2 =  (~A[5]) & (~A[6]) & A[7];
     assign L3 = ( A[5]&A[6]&A[7]&(~ZF) ) | ( A[4]&A[5]&(~A[6])&A[7] );
-    assign HLT = (~A[4]) & A[5] & A[6];
+    assign HLT = (~A[4]) & A[5] & A[7];
 
 endmodule

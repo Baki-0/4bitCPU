@@ -10,11 +10,14 @@ CPU test(clk, In, HEX);
 initial begin
     $dumpfile("CPUtest.vcd");
     $dumpvars(0, CPUtest);
-    $monitor("%t: clk = %b, IN = %d, HEX = %h",$time, clk, In, HEX);
+    $monitor("%t: clk = %b, In = %d, HEX = %h",$time, clk, In, HEX);
 end
 
 initial begin
-    clk = 1;    IN = 4'b0011;
+    clk = 1;    
+    In = 4'b0011;
+    #1000
+    $finish;
 end
 
 always #5  begin
