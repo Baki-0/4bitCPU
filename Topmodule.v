@@ -19,7 +19,7 @@ module Topmodule(
 
     //wire button;    //チャタリング除去後のボタン
 	wire [7:0] disp;	//HEX0表示用
-	wire [4:0] result;	//CPUからの結果
+	wire [3:0] result;	//CPUからの結果
 
 	//wire clk;
 	//assign clk=~button;		//押されたとき0なので反転しておく
