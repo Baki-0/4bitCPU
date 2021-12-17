@@ -1,0 +1,20 @@
+module ROM(
+    input [3:0] A,
+    output [7:0] D
+);
+
+    //Nを入力とし、1+2+...+Nを計算。
+    always @* begin  
+        case (A)
+            4'b0000: D = 8'h30;
+            4'b0001: D = 8'h60;
+            4'b0002: D = 8'hc0;
+            4'b0003: D = 8'h5f;
+            4'b0004: D = 8'hf2;
+            4'b0005: D = 8'h80;
+            4'b0006: D = 8'ha0;
+            default: D = 8'h00;
+        endcase
+    end
+
+endmodule
