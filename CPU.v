@@ -15,7 +15,8 @@ module CPU(
     wire [7:0] ROMOut;
     wire [3:0] Im;
 
-    assign clk = inclk & (~HLT);
+    //assign clk = inclk & (~HLT);
+    assign clk = inclk;
 
     ALU alu1(MUXout1,MUXout2,clk,SUM,ZF);
     REG4BIT reg41(SUM,clk,L0,RegOut1);

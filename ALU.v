@@ -13,6 +13,6 @@ module ALU(
     FA fa3(A[3],B[3],c3,S[3],c4);
 
     assign Din = (~S[0]) & (~S[1]) & (~S[2]) & (~S[3]);
-    DFF dff1(Din,clk,ZF);
+    DtypeFF dff1(Din,clk,ZF);
 
 endmodule

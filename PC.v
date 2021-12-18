@@ -10,8 +10,8 @@ module PC(
     always @(posedge clk) begin
         if (ctrl) begin
             O <= A;
-        end else begin
-            O <= O+1; 
+        end else if (O != 4'b0111) begin
+            O <= O+4'b0001; 
         end
     end
 
